@@ -1,0 +1,21 @@
+#background{
+	background-size: cover;
+	height:1080px;
+	margin: auto;
+	background-image: url("../img/bg.webp");
+}
+
+#navbar{
+	width: 100%;
+	position: fixed;
+	left: 0; top: 0;
+	height: 100px;
+	background-color: #FFF;
+	opacity: 0.8;
+}
+
+#navheader{
+	width: 80%;
+	margin: auto;
+	opacity: 1;
+}
