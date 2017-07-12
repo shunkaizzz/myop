@@ -14,8 +14,22 @@
 	opacity: 0.8;
 }
 
-#navheader{
+.navheader{
 	width: 80%;
 	margin: auto;
 	opacity: 1;
+	font-size: 16pt;
+}
+.navbar-brand{
+	padding: 0;
+	height: 60px;
+}
+.navheader .nav{
+	margin-top: 5px;
+}
+.navheader .navbar-form{
+	margin-top: 15px;
+}
+.navigation{
+	position: fixed;
 }
