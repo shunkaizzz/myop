@@ -1,0 +1,59 @@
+#form1 ul{
+	padding:20px 50px 0 0px;
+}
+
+.zc-pbox{
+	width: 100%;
+	padding:120px 0;
+}
+.zc-inbox{
+	width: 70%;
+	margin: auto;	
+}
+
+.zc-iptbox{
+	list-style: none;
+	padding: 0;
+	margin-bottom: 12px;
+	text-align: right;
+	font-size: 15pt;
+}
+
+.red{
+	color: #ff8650;
+}
+
+.zc-ipt .t_val{
+	padding-left: 35px;
+	display: inline-block;
+	width: 273px;
+	font-size: 14pt;
+}
+input[type=text]{
+	padding: 9px 10px;
+}
+.submit{
+	display: inline-block;
+	margin-top: 20px;
+}
+.myModalTitle{
+	text-align: center;
+}
+
+#back{
+	float: left;
+}
+#submit{
+	display: inline-block;
+}
+
+.customfalse{
+	color: #ac2925;
+}
+.customtrue{
+	color: #5cb85c;
+}
+.customempty{
+	color: #f0ad4e;
+}
+
