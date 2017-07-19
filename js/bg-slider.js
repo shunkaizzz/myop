@@ -10,7 +10,7 @@ $(function(){
 				$list.animate({ left : '0px'}, "slow");
 				curr_page  =1;
 			}else{
-				$list.animate({ left : '-='+$width }, "slow");
+				$list.animate({ left : '-='+"1903px" }, "slow");
 				$list.animate({	left : "-=" +"4px"}, 1);
 				curr_page++
 			}

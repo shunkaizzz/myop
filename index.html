@@ -75,15 +75,19 @@
 						<ul>
 							<li class="zc-iptbox">
 								<span class="label1"><span class="red">*</span>Username：</span>
-								<input name="username" id="uname" class="zc-ipt t_val" type="text" placeholder="请输入您的用户名" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;">								
+								<input name="username" id="uname" class="zc-ipt t_val" type="text" placeholder="请输入您的用户名" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;" data-toggle="popover" data-placement="right" data-content="At least 6 chars">								
 							</li>
-							<li class="zc-iptbox" id="phoneli">
-								<span class="label1"><span class="red">*</span>Phone：</span>
-								<input name="phonenum" id="phone" class="zc-ipt t_val" type="text" placeholder="请输入您的手机号码" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px; " data-toggle="popover" data-placement="right" data-content="11 arabic numbers">
+							<li class="zc-iptbox" id="emaili">
+								<span class="label1"><span class="red">*</span>E-mail：</span>
+								<input name="email" id="email" class="zc-ipt t_val" type="text" placeholder="请输入您的电子邮箱" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px; " data-toggle="popover" data-placement="right" data-content="Please enter your email in correct form">
 							</li>
 							<li class="zc-iptbox" id="ycodeli">		
-								<span class="label1"><span class="red">*</span>Verivication：</span>
-								<input name="ycode" id="ycode" class="zc-ipt t_val" type="text" placeholder="请输入4位手机动态密码" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;">
+								<span class="label1"><span class="red">*</span>Verify Code：</span>
+								<div class="ycode-box">
+									<div class="btn btn-success" id="v-email">Click Me</div>
+								</div>
+								<input name="ycode" id="ycode" class="zc-ipt t_val" type="text" placeholder="请输入4位手机动态密码" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;" data-toggle="popover"
+								data-placement="right" data-content="Please enter 4 digits">
 							</li>	
 							<li class="zc-iptbox" id="passwordli">		
 								<span class="label1"><span class="red">*</span>Password：</span>
@@ -91,7 +95,8 @@
 							</li>		
 							<li class="zc-iptbox">		
 								<span class="label1"><span class="red">*</span>Password：</span>
-								<input name="cheap" id="cheap" class="zc-ipt t_val" type="text" placeholder="再输一遍" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;">
+								<input name="repsw" id="repsw" class="zc-ipt t_val" type="text" placeholder="再输一遍" maxlength="20" style="border: 1px solid rgb(233, 235, 238); color: rgb(96, 96, 108); width: 300px;" data-toggle="popover"
+								data-placement="right" data-content="Please enter the password above">
 							</li>					
 						</ul>
 						<br>					
@@ -122,7 +127,6 @@
 			</nav>			
 		</div>
 	</div>
-	<div class="btn btn-warning">ss</div>
 	<div class="wanted-show" id="vote">
 		<div class="container-fluid">
 		<div class="row">

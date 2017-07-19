@@ -23,17 +23,16 @@ $(function(){
 	   		}).keyup(function(){
 	   			$(this).triggerHandler("blur");
 	   		}).focus(function(){
-	   			$(this).triggerHandler("blur");
+	   			$(this).popover('show');
 	   		});
 
-	   		$("#phone").blur(function(event){
+	   		$("#email").blur(function(event){
+				$value = $(this).val();
 				$($(this).parent()).find(".glyphicon").remove();
 	   			$(this).popover('hide');
 	   			if($(this).val() == ""){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ban-circle customempty'></span>");
-	   			}else if($(this).val().length!=11){
-	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
-	   			}else if(isNaN($(this).val())){
+	   			}else if(!(/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test($value ))){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
 	   			}else{
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ok-circle customtrue'></span>");
@@ -49,14 +48,17 @@ $(function(){
 	   			$($(this).parent()).find(".glyphicon").remove();
 	   			if($(this).val() == ""){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ban-circle customempty'></span>");
-	   			}
-	   			else{
+	   			}else if($(this).val().length!=4){
+	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
+	   			}else if(isNaN($(this).val())){
+	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
+	   			}else{
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ok-circle customtrue'></span");
 	   			}	   			
 	   		}).keyup(function(){
 	   			$(this).triggerHandler("blur");
 	   		}).focus(function(){
-	   			$(this).triggerHandler("blur");
+	   			$(this).popover('show');
 	   		});
 	   		   			   		   			
 	   		$("#password").blur(function(){	   			
@@ -70,9 +72,40 @@ $(function(){
 	   		}).keyup(function(){
 	   			$(this).triggerHandler("blur");
 	   		}).focus(function(){
-	   			$(this).triggerHandler("blur");
+	   			$(this).popover('show');
 	   		});
 		
+	   		$("#repsw").blur(function(){	   			
+	   			$psw = $("#password").val();
+	   			$($(this).parent()).find(".glyphicon").remove();
+	   			if($(this).val() == ""){
+	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ban-circle customempty'></span>");
+	   			}else if($psw != $(this).val()){
+	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
+	   			}else{
+	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ok-circle customtrue'></span");
+	   			}	   			
+	   		}).keyup(function(){
+	   			$(this).triggerHandler("blur");
+	   		}).focus(function(){
+	   			$(this).popover('show');
+	   		});
+
+	   		/*
+			transition of ycode block
+	   		*/
+	   		$("#ycode").hide();
+
+	   		$("#v-email").click(function(){
+	   			if($(this).parents("#form1").find("#emaili").children("span").last().hasClass("customtrue")){
+	   				$(".ycode-box").hide();
+	   				$("#ycode").show();
+	   			}else{
+	   				$email = $(this).parents("#form1").find("#email");
+	   				$email.popover('show');
+	   			}
+	   		});
+
 	   		$("#submit").click(function(event){
 	   			/*
 	   			$.ajax({type:'POST', url: 'localhost:8080/login/login.php', data:{username: $("#username").val(), password: $("#password").val()}, success:function(response){

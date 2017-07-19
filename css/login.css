@@ -23,6 +23,12 @@
 	color: #ff8650;
 }
 
+.ycode-box{
+	width: 300px;
+	display: inline-block;
+	padding-right: 50%;
+}
+
 .zc-ipt .t_val{
 	padding-left: 35px;
 	display: inline-block;
