@@ -97,11 +97,15 @@ $(function(){
 	   		$("#ycode").hide();
 
 	   		$("#v-email").click(function(){
+	   			$email = $(this).parents("#form1").find("#email");
 	   			if($(this).parents("#form1").find("#emaili").children("span").last().hasClass("customtrue")){
 	   				$(".ycode-box").hide();
 	   				$("#ycode").show();
+	   				var $address = $email.val();
+	   				$.post("../myop/php/email-verify.php", {to: $address}, function(data){
+	   					
+	   				});
 	   			}else{
-	   				$email = $(this).parents("#form1").find("#email");
 	   				$email.popover('show');
 	   			}
 	   		});
