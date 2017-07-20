@@ -43,7 +43,7 @@ $(function(){
 	   		}).focus(function(){
 	   			$(this).popover('show');
 	   		});
-
+	   		$ycode = "10000";
 	   		$("#ycode").blur(function(){ 			
 	   			$($(this).parent()).find(".glyphicon").remove();
 	   			if($(this).val() == ""){
@@ -52,7 +52,7 @@ $(function(){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
 	   			}else if(isNaN($(this).val())){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-remove-circle customfalse'></span>");
-	   			}else{
+	   			}else if($(this).val() == $ycode){
 	   				$($(this).parent()).append("<span class='glyphicon glyphicon-ok-circle customtrue'></span");
 	   			}	   			
 	   		}).keyup(function(){
@@ -103,7 +103,7 @@ $(function(){
 	   				$("#ycode").show();
 	   				var $address = $email.val();
 	   				$.post("../myop/php/email-verify.php", {to: $address}, function(data){
-	   					
+	   					$ycode = data;
 	   				});
 	   			}else{
 	   				$email.popover('show');
