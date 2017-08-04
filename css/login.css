@@ -1,7 +1,9 @@
 #form1 ul{
-	padding:20px 50px 0 0px;
+	padding:20px 50px 0px 0px;
 }
-
+#form2 ul{
+	padding:20px 50px 0px 0px;
+}
 .zc-pbox{
 	width: 100%;
 	padding:120px 0;
@@ -24,20 +26,23 @@
 }
 
 .ycode-box{
-	width: 300px;
+	width: 273px;
 	display: inline-block;
 	padding-right: 50%;
 	height: 48px;
 }
 
-.zc-ipt .t_val{
-	padding-left: 35px;
+.t_val{
+	padding-left: 10px;
 	display: inline-block;
-	width: 273px;
 	font-size: 14pt;
+	border: 1px solid rgb(233, 235, 238); 
+	color: rgb(96, 96, 108); 
+	width: 273px;
 }
-input[type=text]{
-	padding: 9px 10px;
+
+input{
+	padding: 9px 5px;
 }
 .submit{
 	display: inline-block;
@@ -63,4 +68,3 @@ input[type=text]{
 .customempty{
 	color: #f0ad4e;
 }
-

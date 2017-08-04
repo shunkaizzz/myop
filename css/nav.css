@@ -1,6 +1,6 @@
 .navheader{
-	width: 80%;
 	margin: auto;
+	width: 1170px;
 	opacity: 1;
 	font-size: 15pt;
 }
@@ -63,4 +63,16 @@
 }
 .sign-button{
 	margin: 10px 10px;
+}
+#wel{
+	display: none;
+
+}
+.navbar-right .dropdown{
+	display: none;
+}
+@media (max-width: 1200px){
+	.navheader{
+		width: 100%;
+	}
 }
