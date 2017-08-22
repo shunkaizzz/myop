@@ -13,7 +13,8 @@
             if($num)  
             {  
                 $row = mysqli_fetch_array($result);  //将数据以索引方式储存在数组中  
-                echo $row[0];  
+                $arr = array('name' => $row["username"], 'psw' => $row["password"]);
+                echo json_encode($arr);
             }  
 
 		}else{

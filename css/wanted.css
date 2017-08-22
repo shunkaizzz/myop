@@ -1,5 +1,12 @@
 .vote{
 	width: 40%;
-	margin: 5px 15px; 
+	min-width: 70px;
+	margin: 5px 0px; 
 	text-align: center;
+}
+.thumbnail>img{
+	height: 400px;
+}
+.intro{
+	height: 40px;
 }
