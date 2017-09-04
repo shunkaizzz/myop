@@ -9,20 +9,28 @@ $(function(){
 				$button.text("Statistics");
 			});
 			$.post('../myop/php/voting.php', {name: $candidate, user: $user}, function(data){
-				alert(data); 
+				//alert(data); 
 			});
 		}else{
 			$("#modal_stats").modal();
 			if($("#modal_stats").find(".modal-body").children().length<1){
 				var ctx = createCanvas("graphDiv1");
 				var graph = new BarGraph(ctx);
-				graph.maxValue = 30;
+				graph.maxValue = 0;
 				graph.margin = 20;
 				graph.colors = ["#49a0d8", "#d353a0", "#ffc527", "#df4c27"];
-				graph.xAxisLabelArr = ["Chopper", "Luffy", "Nami", "Robin", "Sanji", "Robin"];
+				
+				$.post('../myop/php/getVotingData.php',function(data){
+					//console.log(data);
+					graph.xAxisLabelArr = [data[0].candidate, data[1].candidate, data[2].candidate, 
+					data[3].candidate, data[4].candidate, data[5].candidate];
+					graph.update([data[0].votes, data[1].votes, data[2].votes, data[3].votes, data[4].votes, data[5].votes]);
+				}, "json");
+				/**
 				setInterval(function () {
 					graph.update([Math.random() * 30, Math.random() * 30, Math.random() * 30, Math.random() * 30]);
 				}, 1000);		
+				**/
 			}	
 		}
 	});
@@ -135,6 +143,12 @@ function BarGraph(ctx) {
 		}
 	  }
 	  
+	  for(i =0; i< arr.length; i+=1){
+	  	if(arr[i]> maxBarHeight) 
+	  		maxBarHeight = arr[i];
+	  }
+
+
 	  // For each bar
 	  for (i = 0; i < arr.length; i += 1) {
 		// Set the ratio of current bar compared to the maximum
@@ -206,7 +220,7 @@ function BarGraph(ctx) {
 
   // Public properties and methods
 	
-  this.width = 300;
+  this.width = 500;
   this.height = 150;	
   this.maxValue;
   this.margin = 5;
